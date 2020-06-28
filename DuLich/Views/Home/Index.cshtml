@@ -1,0 +1,95 @@
+﻿@using DuLich.Models.EF
+@using PagedList.Mvc;
+@model PagedList.IPagedList<DuLich.Models.EF.BanTin>
+@{
+    ViewBag.Title = "Trang chủ";
+    Layout = "~/Views/Shared/_LayoutHome.cshtml";
+    var tinmoi = (List<DuLich.Models.EF.BanTin>)ViewBag.TinMoi;
+}
+
+
+
+<section class="section first-section">
+    <div class="container-fluid">
+        <div class="masonry-blog clearfix">
+            @foreach (var tm in tinmoi)
+            {
+                <div class="left-side">
+                    <div class="masonry-box post-media">
+                        <img src="/forest-time/upload/@tm.Anh.Anh1" alt="" class="img-fluid">
+                        <div class="shadoweffect">
+                            <div class="shadow-desc">
+                                <div class="blog-meta">
+                                    <span class="bg-aqua"><a href="/ChiTietBanTin/Index/@tm.IDBanTin" title="">@tm.ViTri</a></span>
+                                    <h4><a href="/ChiTietBanTin/Index/@tm.IDBanTin" title="">@tm.TieuDe</a></h4>
+                                    <small><a href="/ChiTietBanTin/Index/@tm.IDBanTin" title="">@tm.NgayDang</a></small>
+                                    <small><a href="/ChiTietBanTin/Index/@tm.IDBanTin" title="">Tác giả: @tm.Username</a></small>
+                                </div><!-- end meta -->
+                            </div><!-- end shadow-desc -->
+                        </div><!-- end shadow -->
+                    </div><!-- end post-media -->
+                </div><!-- end left-side -->
+            }
+
+
+
+        </div><!-- end masonry -->
+    </div>
+</section>
+
+<section class="section wb">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
+                <div class="page-wrapper">
+                    <div class="blog-list clearfix">
+                        @foreach (var bt in Model)
+                        {
+
+                            <div class="blog-box row">
+                                <div class="col-md-4">
+                                    <div class="post-media">
+                                        <a href="/ChiTietBanTin/Index/@bt.IDBanTin" title="">
+                                            <img src="/forest-time/upload/@bt.Anh.Anh3" alt="" class="img-fluid">
+                                            <div class="hovereffect"></div>
+                                        </a>
+                                    </div><!-- end media -->
+                                </div><!-- end col -->
+
+                                <div class="blog-meta big-meta col-md-8">
+                                    <span class="bg-aqua"><a href="/ChiTietBanTin/Index/@bt.IDBanTin" title="">@bt.ViTri</a></span>
+                                    <h4><a href="/ChiTietBanTin/Index/@bt.IDBanTin" title="">@bt.TieuDe</a></h4>
+                                    <p>@bt.BanTinNgan</p>
+                                    <small><a href="/ChiTietBanTin/Index/@bt.IDBanTin" title=""><i class="fa fa-eye"></i> @bt.SoLuotXem</a></small>
+                                    <small><a href="/ChiTietBanTin/Index/@bt.IDBanTin" title="">@bt.NgayDang</a></small>
+                                    <small><a href="/ChiTietBanTin/Index/@bt.IDBanTin" title="">Tác Giả: @bt.Username</a></small>
+                                </div><!-- end meta -->
+                            </div><!-- end blog-box -->
+
+                            <hr class="invis">
+                        }
+
+                    </div><!-- end blog-list -->
+                </div><!-- end page-wrapper -->
+
+                <hr class="invis">
+
+                <div class="row">
+                    <div class="col-md-12">
+
+                        <nav aria-label="Page navigation">
+
+                            <ul class="pagination justify-content-start">
+
+                                <li class="page-item">@Html.PagedListPager(Model, page => Url.Action("Index", new { page }))</li>
+                      
+                            </ul>
+                        </nav>
+                    </div><!-- end col -->
+                </div><!-- end row -->
+            </div><!-- end col -->
+
+            @{Html.RenderAction("TinHot", "Home");}<!-- end col -->
+        </div><!-- end row -->
+    </div><!-- end container -->
+</section>

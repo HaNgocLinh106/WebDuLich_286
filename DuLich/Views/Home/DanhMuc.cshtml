@@ -1,0 +1,6 @@
+﻿@model List<DuLich.Models.EF.DanhMuc>
+@foreach (var it in Model)
+{
+    <a href="/DanhMucTin/Index/@it.IDDanhMuc">@it.TenDanhMuc</a>
+}
+

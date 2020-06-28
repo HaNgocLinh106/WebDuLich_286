@@ -1,0 +1,13 @@
+﻿@model List<DuLich.Models.EF.DanhMucDad>
+@foreach (var it in Model)
+{
+    <div class="dropdown">
+        <li class="nav-item">
+            <a class="nav-link color-green-hover" href="/Home/Index">@it.TenDanhMucDad</a>
+            <div class="dropdown-child">
+                @{ Html.RenderAction("DanhMuc", "Home", new { id = it.IDDanhMucDad });}
+            </div>
+        </li>
+    </div>
+}
+

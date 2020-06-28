@@ -1,0 +1,67 @@
+﻿@model List<DuLich.Models.EF.BanTin>
+    @using DuLich.Models.EF
+@{ 
+    var anh = (List<DuLich.Models.EF.BanTin>)ViewBag.Anh;
+    var diadiem = (List<DuLich.Models.EF.BanTin>)ViewBag.DD;
+}
+<div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
+    <div class="sidebar">
+        <div class="widget">
+            <h2 class="widget-title">Tìm kiếm</h2>
+            <form class="form-inline search-form" method="post" action="/Home/TimKiem">
+                <div class="form-group">
+                    <input type="search" name="search" class="form-control" placeholder="Nhập thông tin cần tìm">
+                </div>
+                <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>
+            </form>
+        </div>
+            <!-- end widget -->
+
+            <div class="widget">
+                <h2 class="widget-title">Top bài viết</h2>
+                <div class="blog-list-widget">
+                    <div class="list-group">
+                        @foreach (var it in Model)
+                        {
+                            <a href="/ChiTietBanTin/Index/@it.IDBanTin" class="list-group-item list-group-item-action flex-column align-items-start">
+                                <div class="w-100 justify-content-between">
+                                    <img src="/forest-time/upload/@it.Anh.Anh1" alt="" class="img-fluid float-left">
+                                    <h5 class="mb-1">@it.TieuDe</h5>
+                                    <small>@it.NgayDang</small>
+                                </div>
+                            </a>
+                        }
+
+
+                    </div>
+                </div><!-- end blog-list -->
+            </div><!-- end widget -->
+         
+            <div class="widget">
+                <h2 class="widget-title">Tự hào Việt Nam</h2>
+                <div class="instagram-wrapper clearfix">
+                    @foreach (var item in anh)
+                    {
+                        <a href="/ChiTietBanTin/Index/@item.IDBanTin"><img src="/forest-time/upload/@item.Anh.Anh1" alt="" class="img-fluid"></a>
+                    }
+
+
+                </div><!-- end Instagram wrapper -->
+            </div><!-- end widget -->
+
+            <div class="widget">
+                <h2 class="widget-title">Nhất định ghé thăm</h2>
+                <div class="link-widget">
+                    <ul>
+                        @foreach (var dd in diadiem)
+                        {
+                            <li><a href="/DanhMucTin/Index/@dd.IDDanhMuc">@dd.ViTri </a></li>
+                        }
+
+
+                    </ul>
+                </div><!-- end link-widget -->
+            </div><!-- end widget -->
+        </div><!-- end sidebar -->
+    </div><!-- end col -->
+</div>
