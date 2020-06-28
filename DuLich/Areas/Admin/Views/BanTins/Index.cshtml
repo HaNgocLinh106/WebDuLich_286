@@ -1,0 +1,82 @@
+﻿@model IEnumerable<DuLich.Models.EF.BanTin>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Anh.TenAnhDM)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DanhMuc.TenDanhMuc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NoiDung.TenND_DM)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TableUser.Pass)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TieuDe)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BanTinNgan)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NgayDang)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SoLuotXem)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ViTri)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Anh.TenAnhDM)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DanhMuc.TenDanhMuc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NoiDung.TenND_DM)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TableUser.Pass)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TieuDe)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BanTinNgan)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NgayDang)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SoLuotXem)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ViTri)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IDBanTin }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IDBanTin }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IDBanTin })
+        </td>
+    </tr>
+}
+
+</table>

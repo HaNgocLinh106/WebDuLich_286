@@ -1,0 +1,35 @@
+﻿@model DuLich.Models.EF.DanhMuc
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>DanhMuc</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DanhMucDad.TenDanhMucDad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DanhMucDad.TenDanhMucDad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TenDanhMuc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenDanhMuc)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IDDanhMuc }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

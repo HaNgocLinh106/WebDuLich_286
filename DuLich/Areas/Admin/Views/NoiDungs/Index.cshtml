@@ -1,0 +1,70 @@
+﻿@model IEnumerable<DuLich.Models.EF.NoiDung>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TenND_DM)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Doan1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Doan2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Doan3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Doan4)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Doan5)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Doan6)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenND_DM)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Doan1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Doan2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Doan3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Doan4)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Doan5)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Doan6)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IDNoiDung }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IDNoiDung }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IDNoiDung })
+        </td>
+    </tr>
+}
+
+</table>

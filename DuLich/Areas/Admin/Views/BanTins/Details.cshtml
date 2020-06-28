@@ -1,0 +1,91 @@
+﻿@model DuLich.Models.EF.BanTin
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>BanTin</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Anh.TenAnhDM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Anh.TenAnhDM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DanhMuc.TenDanhMuc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DanhMuc.TenDanhMuc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NoiDung.TenND_DM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NoiDung.TenND_DM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TableUser.Pass)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TableUser.Pass)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TieuDe)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TieuDe)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BanTinNgan)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BanTinNgan)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NgayDang)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NgayDang)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SoLuotXem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SoLuotXem)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ViTri)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ViTri)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IDBanTin }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

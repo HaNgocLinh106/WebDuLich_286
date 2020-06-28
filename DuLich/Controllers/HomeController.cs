@@ -13,7 +13,7 @@ namespace DuLich.Controllers
     public class HomeController : Controller
     {
         // GET: Home
-        public ActionResult Index(int page = 1, int pageSize = 6)
+        public ActionResult Index(int page = 1, int pageSize = 1)
         {
             var model = new DanhMucTinF().ListAllPaging(page, pageSize);
             ViewBag.TinMoi = new DanhMucTinF().TinMoi(3);

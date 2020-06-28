@@ -20,6 +20,7 @@ namespace DuLich.Models.EF
         public virtual DbSet<NguoiDung> NguoiDungs { get; set; }
         public virtual DbSet<NoiDung> NoiDungs { get; set; }
         public virtual DbSet<PhanHoiBinhLuan> PhanHoiBinhLuans { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<TableUser> TableUsers { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

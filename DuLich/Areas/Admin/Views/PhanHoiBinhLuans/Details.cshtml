@@ -1,0 +1,43 @@
+﻿@model DuLich.Models.EF.PhanHoiBinhLuan
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>PhanHoiBinhLuan</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.BinhLuan.NoiDung)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BinhLuan.NoiDung)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NguoiDung.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NguoiDung.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NoiDung)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NoiDung)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IDPhanHoi }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

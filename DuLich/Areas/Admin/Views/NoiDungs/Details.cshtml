@@ -1,0 +1,75 @@
+﻿@model DuLich.Models.EF.NoiDung
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>NoiDung</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TenND_DM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenND_DM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Doan1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Doan1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Doan2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Doan2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Doan3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Doan3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Doan4)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Doan4)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Doan5)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Doan5)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Doan6)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Doan6)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IDNoiDung }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -25,6 +26,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>3.6</TypeScriptToolsVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -134,6 +136,17 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\AnhsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\BanTinsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\BinhLuansController.cs" />
+    <Compile Include="Areas\Admin\Controllers\DanhMucDadsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\DanhMucsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\HomeAdminController.cs" />
+    <Compile Include="Areas\Admin\Controllers\NguoiDungsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\NoiDungsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\PhanHoiBinhLuansController.cs" />
+    <Compile Include="Areas\Admin\Controllers\TableUsersController.cs" />
     <Compile Include="Controllers\ChiTietBanTinController.cs" />
     <Compile Include="Controllers\DanhMucTinController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -149,6 +162,7 @@
     <Compile Include="Models\EF\NguoiDung.cs" />
     <Compile Include="Models\EF\NoiDung.cs" />
     <Compile Include="Models\EF\PhanHoiBinhLuan.cs" />
+    <Compile Include="Models\EF\sysdiagram.cs" />
     <Compile Include="Models\EF\TableUser.cs" />
     <Compile Include="Models\EF\WebDuLich.cs" />
     <Compile Include="Models\Fun\DanhMucDad.cs" />
@@ -156,6 +170,25 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="code\bootstrap\css\bootstrap-responsive.min.css" />
+    <Content Include="code\bootstrap\css\bootstrap.min.css" />
+    <Content Include="code\bootstrap\img\glyphicons-halflings-white.png" />
+    <Content Include="code\bootstrap\img\glyphicons-halflings.png" />
+    <Content Include="code\bootstrap\img\VIETTRAVELLER %282%29.png" />
+    <Content Include="code\bootstrap\js\bootstrap.min.js" />
+    <Content Include="code\css\theme.css" />
+    <Content Include="code\images\bg.png" />
+    <Content Include="code\images\icons\css\font-awesome.css" />
+    <Content Include="code\images\img.jpg" />
+    <Content Include="code\images\jquery-ui\picker.png" />
+    <Content Include="code\images\user.png" />
+    <Content Include="code\scripts\common.js" />
+    <Content Include="code\scripts\datatables\jquery.dataTables.js" />
+    <Content Include="code\scripts\flot\jquery.flot.js" />
+    <Content Include="code\scripts\flot\jquery.flot.pie.js" />
+    <Content Include="code\scripts\flot\jquery.flot.resize.js" />
+    <Content Include="code\scripts\jquery-1.9.1.min.js" />
+    <Content Include="code\scripts\jquery-ui-1.10.1.custom.min.js" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -273,6 +306,59 @@
     <Content Include="forest-time\fonts\fontawesome-webfont.woff" />
     <Content Include="forest-time\fonts\fontawesome-webfont.woff2" />
     <Content Include="forest-time\fonts\FontAwesome.otf" />
+    <Content Include="Areas\Admin\Views\web.config" />
+    <Content Include="Areas\Admin\Views\Shared\_LayoutAdmin.cshtml" />
+    <Content Include="code\images\icons\font\fontawesome-webfont3294.eot" />
+    <Content Include="code\images\icons\font\fontawesome-webfont3294.ttf" />
+    <Content Include="code\images\icons\font\fontawesome-webfont3294.woff" />
+    <Content Include="code\images\icons\font\fontawesome-webfontd41d.eot" />
+    <Content Include="Areas\Admin\Views\HomeAdmin\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\BanTins\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\BanTins\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\BanTins\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\BanTins\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\BanTins\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\NoiDungs\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\NoiDungs\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\NoiDungs\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\NoiDungs\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\NoiDungs\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Anhs\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Anhs\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Anhs\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Anhs\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Anhs\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\TableUsers\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\TableUsers\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\TableUsers\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\TableUsers\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\TableUsers\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\DanhMucs\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\DanhMucs\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\DanhMucs\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\DanhMucs\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\DanhMucs\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\DanhMucDads\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\DanhMucDads\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\DanhMucDads\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\DanhMucDads\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\DanhMucDads\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\NguoiDungs\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\NguoiDungs\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\NguoiDungs\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\NguoiDungs\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\NguoiDungs\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\BinhLuans\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\BinhLuans\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\BinhLuans\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\BinhLuans\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\BinhLuans\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\PhanHoiBinhLuans\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\PhanHoiBinhLuans\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\PhanHoiBinhLuans\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\PhanHoiBinhLuans\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\PhanHoiBinhLuans\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\HomeAdmin\Login.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -306,6 +392,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Admin\Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -320,11 +407,15 @@
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
   <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
